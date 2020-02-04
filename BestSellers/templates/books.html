@@ -7,30 +7,30 @@
     <body>
         
         <h1>Current New York Times Best Sellers</h1>
+        
+        <ul>
+        {% for i in range(0, books|length) %}
+		<li>
+		<b>{{ books[i]["title"] }}</b></br>
+		</li><br>
+			
+		<img src={{books[i]["book_image"]}} alt="American Dirt" height="172" width="172"></br></br>
 
-        <b>Rank: {{ rank }}</b></br>
+		<b>Rank: {{ books[i]["rank"] }}</b></br>
 
-	<b>Title: {{ title }}</b></br>
+		<b>Title: {{ books[i]["title"] }}</b></br>
 
-	<b>Author: {{ author }}</b></br>
+		<b>Author: {{ books[i]["author"] }}</b></br>
 
-	<b>Publisher: {{ publisher }}</b></br>
+		<b>Publisher: {{ books[i]["publisher"] }}</b></br>
 
-	<b>Number of weeks on the list: {{ weeks }}</b></br>
+		<b>Number of weeks on the list: {{ books[i]["weeks"] }}</b></br>
 
-	<b>Description: {{ description }}</b></br>
+		<b>Description: {{ books[i]["description"] }}</b></br>
 
-	<b>book_image: {{ book_image }}</b></br><br><br>
-	
-	<img src={{book_image}} alt="American Dirt" height="172" width="172">
-
-	{% for i in range(0, len) %}
-  	   <ul>
-		{% for j in range(0, matrix|length) %}
-	   	<li>  {{ matrix[i][j] }} </li>
-	   	{% endfor %}
-     	</ul>
+			
 	{% endfor %}
+     	</ul>	
 	
     </body>
 </html>
