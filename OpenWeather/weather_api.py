@@ -31,6 +31,8 @@ def index():
 @app.route('/forecast/<zip_code>')
 def forecast(zip_code):
 
+    print(zip_code)
+
     api_url = "https://api.openweathermap.org/data/2.5/forecast?zip="+zip_code+",us&appid="+api_key+"&units=imperial"
     response = requests.get(api_url)
     data = response.json()
